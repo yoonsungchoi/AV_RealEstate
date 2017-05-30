@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.lee.loading_page_2.login.LoginActivity"
+    android:orientation="vertical"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#646464"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingTop="20dip"
+        android:paddingRight="90dip"
+        android:paddingLeft="90dip"
+        android:paddingBottom="40dip"
+        android:src="@drawable/cutty_logo"
+        android:layout_weight="0.44" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="25dip"
+        android:layout_marginLeft="25dip"
+        android:layout_marginRight="25dip">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="ID"/>
+        <EditText
+            android:singleLine="true"
+            android:id="@+id/login_id_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:textColorHint="#ffffff"
+            android:gravity="left"
+            android:textSize="14dip"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="PASSWORD"/>
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/login_pw_edittext"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingRight="30dp"
+            android:paddingLeft="30dp"
+            android:textColorHint="#ffffff"
+            android:gravity="left"
+            android:textSize="14dip"
+            android:textColorHighlight="#ffffff"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Login"
+        android:textColor="#ffffff"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No account yet?"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="15dip"/>
+
+        <TextView android:id="@+id/login_link_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   SIGN UP"
+            android:gravity="center"
+            android:textColor="#ffffff"
+            android:textSize="16dip"
+            android:backgroundTint="#ffffff" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
