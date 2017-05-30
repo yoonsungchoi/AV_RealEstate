@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#646464"
+    android:background="#ffffff"
     android:weightSum="1">
 
     <LinearLayout
@@ -23,7 +23,7 @@
                 android:text="ID"
                 android:id="@+id/m_id"
                 android:textSize="20dp"
-                android:textColor="#ffffff" />
+                android:textColor="#FF4DA74A" />
 
 
 
@@ -33,8 +33,8 @@
                 android:layout_height="fill_parent"
                 android:ems="10"
                 android:id="@+id/input_id"
-                android:textColor="#ffffff"
-                android:backgroundTint="#ffffff"
+                android:textColor="#FF4DA74A"
+                android:backgroundTint="#FF4DA74A"
 
                 />
 
@@ -53,7 +53,7 @@
                 android:layout_height="wrap_content"
                 android:text="E-MAIL"
                 android:id="@+id/m_email"
-                android:textColor="#ffffff"
+                android:textColor="#FF4DA74A"
                 android:textSize="18dp" />
 
             <EditText
@@ -61,8 +61,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:inputType="textEmailAddress"
-                android:textColor="#ffffff"
-                android:backgroundTint="#ffffff"
+                android:textColor="#FF4DA74A"
+                android:backgroundTint="#FF4DA74A"
                 android:ems="10"
                 android:id="@+id/input_email"
 
@@ -79,7 +79,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
+                android:textColor="#FF4DA74A"
                 android:text="PASSWORD"
                 android:id="@+id/m_password"
                 android:textSize="18dp" />
@@ -89,9 +89,9 @@
                 android:singleLine="true"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:textColor="#FF5D10AC"
+                android:textColor="#FF4DA74A"
                 android:inputType="textPassword"
-                android:backgroundTint="#ffffff"
+                android:backgroundTint="#FF4DA74A"
                 android:id="@+id/input_passwd" />
         </LinearLayout>
         <LinearLayout
@@ -103,7 +103,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff"
+                android:textColor="#FF4DA74A"
                 android:text="CHECK PASSWORD"
                 android:id="@+id/m_confpasswd"
                 android:textSize="18dp" />
@@ -118,8 +118,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="fill_parent"
                     android:inputType="textPassword"
-                    android:textColor="#ffffff"
-                    android:backgroundTint="#ffffff"
+                    android:textColor="#FF4DA74A"
+                    android:backgroundTint="#FF4DA74A"
                     android:id="@+id/confirm_passwd"
                     android:visibility="visible" />
 
@@ -128,7 +128,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/TextVIew_PwdProblem"
                     android:textStyle="bold"
-                    android:textColor="#ffffff"
+                    android:textColor="#FF4DA74A"
                     android:gravity="center" />
             </LinearLayout>
 
@@ -143,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NAME"
-                android:textColor="#ffffff"
+                android:textColor="#FF4DA74A"
                 android:id="@+id/m_name"
                 android:textSize="18dp" />
 
@@ -153,8 +153,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:inputType="textPersonName"
-                android:textColor="#ffffff"
-                android:backgroundTint="#ffffff"
+                android:textColor="#FF4DA74A"
+                android:backgroundTint="#FF4DA74A"
                 android:id="@+id/input_name"
                 />
         </LinearLayout>
