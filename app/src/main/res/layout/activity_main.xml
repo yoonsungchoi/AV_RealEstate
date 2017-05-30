@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#404040"
+    android:background="#ffffff"
     tools:context="com.example.lee.loading_page_2.MainActivity">
 
     <ImageView
@@ -15,7 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="45dp"
         android:layout_weight="1"
-        android:src="@drawable/cutty_logo"
+        android:src="@drawable/logo"
         tools:layout_editor_absoluteX="58dp"
         tools:layout_editor_absoluteY="49dp" />
 

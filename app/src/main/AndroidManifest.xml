@@ -12,8 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.NoActionBar"
-    >
+        android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
@@ -38,7 +37,8 @@
             android:label="@string/app_name" />
         <activity android:name=".SubActivity" />
         <activity android:name=".FavoriteActivity" />
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".login.SignupActivity"></activity>
     </application>
 
 </manifest>
