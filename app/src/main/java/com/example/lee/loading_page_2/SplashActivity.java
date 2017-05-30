@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.lee.loading_page_2.login.LoginActivity;
+
 /**
  * Created by Lee on 2017. 5. 17..
  */
@@ -18,7 +20,7 @@ public class SplashActivity extends Activity {
             e.printStackTrace();
         }
 
-        startActivity(new Intent(this, MainActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
         finish();
     }
 }
