@@ -35,7 +35,6 @@
                 android:id="@+id/input_id"
                 android:textColor="#FF4DA74A"
                 android:backgroundTint="#FF4DA74A"
-
                 />
 
 
@@ -171,6 +170,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="SIGN UP"
+                android:background="#83d795"
                 android:id="@+id/new_member_button"
                 />
 

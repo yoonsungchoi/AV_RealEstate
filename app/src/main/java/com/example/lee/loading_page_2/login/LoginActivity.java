@@ -45,8 +45,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 RequestParams params = new RequestParams();
                 params.put("id", id.getText().toString().trim());
-                params.put("password", enpw);
-                HttpClient.post("login", params, new JsonHttpResponseHandler() {
+                params.put("password", password.getText().toString().trim());
+                HttpClient.post("test2", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                         super.onSuccess(statusCode, headers, response);
@@ -63,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-
                         }
                     }
 
@@ -80,9 +79,8 @@ public class LoginActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 Intent intent = new Intent(
-                        LoginActivity.this, MainActivity.class);
+                        LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
-
 
                 //회원가입 버튼 클릭 시
             }

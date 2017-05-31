@@ -58,7 +58,7 @@ public class SignupActivity extends AppCompatActivity {
                     params.put("email", email.getText().toString().trim());
                     params.put("password", pass1);
                     params.put("name", name.getText().toString().trim());
-                    HttpClient.post("signup", params, new JsonHttpResponseHandler() {
+                    HttpClient.post("test3", params, new JsonHttpResponseHandler() {
                         @Override
                         public void onSuccess(int statusCode, Header[] headers, JSONObject responseBody) {
                             try {
