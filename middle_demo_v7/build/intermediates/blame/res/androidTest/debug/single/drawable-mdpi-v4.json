@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\younsung\\AV_Integrate\\AV_Integrate\\middle_demo_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\app_icon.png",
+        "source": "C:\\Users\\younsung\\AV_Integrate\\AV_Integrate\\middle_demo_v7\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\app_icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Lee\\Desktop\\Middle_demo_final\\middle_demo_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\app_icon.png",
+        "source": "C:\\Users\\Lee\\Desktop\\Middle_demo_final\\middle_demo_v7\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\app_icon.png"
+    },
+    {
+        "merged": "C:\\github_repo\\AVRealEstate\\AV_RealEstate\\middle_demo_v7\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\app_icon.png",
+        "source": "C:\\github_repo\\AVRealEstate\\AV_RealEstate\\middle_demo_v7\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\app_icon.png"
+    }
+]
