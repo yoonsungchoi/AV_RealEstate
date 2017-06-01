@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
-            android:name=".SplashActivity"
+            android:name=".action.SplashActivity"
             android:theme="@style/SplashTheme">
 
             <!-- android:screenOrientation="portrait"> -->
@@ -31,14 +31,13 @@
         <uses-permission android:name="com.samsung.permission.SENSOR" />
         <uses-permission android:name="android.permission.BODY_SENSORS" />
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".action.MainActivity" />
         <activity
             android:name="com.PM.Demo.UnityPlayerActivity"
             android:label="@string/app_name" />
-        <activity android:name=".SubActivity" />
-        <activity android:name=".FavoriteActivity" />
-        <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.SignupActivity"></activity>
+        <activity android:name=".action.FavoriteActivity" />
+        <activity android:name=".action.LoginActivity" />
+        <activity android:name=".action.SignupActivity"></activity>
     </application>
 
 </manifest>
