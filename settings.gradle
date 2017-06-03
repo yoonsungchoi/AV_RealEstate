@@ -1,1 +1,1 @@
-include ':app', ':DemoPrototype_v4', ':middle_demo_v7'
+include ':app', ':UnityModule_v7'
