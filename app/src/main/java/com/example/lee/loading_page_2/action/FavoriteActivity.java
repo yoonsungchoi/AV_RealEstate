@@ -1,140 +1,177 @@
 package com.example.lee.loading_page_2.action;
 
 import android.app.Activity;
-import android.content.Context;
-import android.support.annotation.Nullable;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
+import com.example.lee.loading_page_2.ListViewBtnAdapter;
+import com.example.lee.loading_page_2.ListViewBtnItem;
 import com.example.lee.loading_page_2.R;
+import com.example.lee.loading_page_2.util.HttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavoriteActivity extends Activity {
-    String [] data = { "앤트맨","함정","오피스","셀프/리스","베테랑","스트레이트 아웃 오브 컴턴",
-            "뷰티 인사이드","치외법권","사도","미쓰 와이프","메이즈 러너: 스코치 트라이얼",
-            "암살","제 7기사단","라이즈 오브 더 레전드: 황비홍","피케이: 별에서 온 얼간이",
-            "성실한 나라의 앨리스","앙: 단팥 인생 이야기","우먼 인 블랙: 죽음의 천사",
-            "러브 라이브! 더 스쿨 아이돌 무비","젊은 엄마 3"
-    };
+import cz.msebera.android.httpclient.Header;
+
+public class FavoriteActivity extends Activity implements ListViewBtnAdapter.ListBtnClickListener{
+
+    org.json.JSONObject jsonObj;
+    List<JSONObject> house_jsonArr = new ArrayList<>();
+//    org.json.JSONArray house_jsonArr;
+    List<String> house_id_arr;
+    //해당 제거 버튼 누른 경우
+    @Override
+    public void onListBtnClick(int position) {
+        Log.d("event", "click on 제거 버튼");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listview);
-        ArrayAdapter adapter = new ArrayAdapter(
-                getApplicationContext(), // 현재 화면의 제어권자
-                R.layout.myrow,  //한행마다 보여줄 레이아웃을 지정
-                data); // 다량의 데이터
 
-        ListView lv = (ListView)findViewById(R.id.list);
-        lv.setAdapter(adapter);  // 리스트 뷰에 adapter 를 등록한다
+        house_jsonArr = new ArrayList<>();
+        Intent intent = getIntent();
+        final String user_id = intent.getStringExtra("user_id");
 
-        /*setTitle("즐겨찾기");
-        setContentView(R.layout.activity_favorite);
-        final EditText et = (EditText) findViewById(R.id.editText1);
-        Button bSave = (Button) findViewById(R.id.button1);
-        Button bLoad = (Button) findViewById(R.id.button2);
-
-        final LinearLayout dynamicLayout = (LinearLayout) findViewById(R.id.dynamicArea);
-
-        //file 저장
-        bSave.setOnClickListener(new View.OnClickListener() {
-            @Override    // 입력한 데이터를 파일에 추가로 저장하기
-            public void onClick(View v) {
-                String data = et.getText().toString();
-
+        RequestParams params = new RequestParams();
+        params.put("id", user_id);
+        HttpClient.post("getFavorite", params, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, org.json.JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
                 try {
-                    FileOutputStream fos = openFileOutput
-                            ("favoriteList.txt", // 파일명 지정
-                                    Context.MODE_APPEND);// 저장모드
-                    File temp = new File("favoriteList.txt");
-                    PrintWriter out = new PrintWriter(fos);
-                    out.println(data);
-                    out.close();
+                    jsonObj = response;
+                    JSONArray jsonArr = (JSONArray) response.get("house_id");
 
-//                    tv.setText("파일 저장 완료");
-//                    pathView01.setText(temp.getAbsolutePath());
+                    //사용자의 즐겨찾기 등록한 house_id 값 arrlist 저장.
+                    for(int i=0; i<jsonArr.length(); i++){
+//                        house_id_arr.add(jsonArr.getString(i));
 
+                        //house_id를 이용해 부동산 정보 가져옴
+                        RequestParams params = new RequestParams();
+                        params.put("house_id", jsonArr.getString(i));
+                        HttpClient.post("getInfoID", params, new JsonHttpResponseHandler(){
+                            @Override
+                            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                                super.onSuccess(statusCode, headers, response);
+                                try {
+                                    jsonObj = response;
+                                    house_jsonArr.add(jsonObj);
+                                    Log.d("houseData", "[" +
+                                            jsonObj.get("house_div") + ", " +
+                                            jsonObj.get("house_item") + ", " +
+                                            jsonObj.get("house_addr") + ", " +
+                                            jsonObj.get("price") + ", " +
+                                            jsonObj.get("floor") + ", " + "]");
+                                } catch(Exception e){
+                                    e.printStackTrace();
+                                }
+                            }
+                        });
+                        Log.d("house 정보 with house_id", "END");
+                        Log.d("house_jsonArr : ", jsonArr+"");
+//                        Log.i("house_id #"+(i+1)+": ", jsonArr.getString(i));
+                    }
+                    Log.d("house_id : ", jsonObj.get("house_id").toString());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
+        ListView listview ;
+        ListViewBtnAdapter adapter;
+        ArrayList<ListViewBtnItem> items = new ArrayList<ListViewBtnItem>() ;
 
-        //file 로딩
-        bLoad.setOnClickListener(new View.OnClickListener() {
+        // items 로드.
+        loadItemsFromDB(house_jsonArr, items) ;
+
+        // Adapter 생성
+        adapter = new ListViewBtnAdapter(this, R.layout.listview_btn_item, items, this) ;
+
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.listview);
+        listview.setAdapter(adapter);
+
+        // 위에서 생성한 listview에 클릭 이벤트 핸들러 정의.
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                // 파일의 내용을 읽어서 TextView 에 보여주기
-                try {
-                    // 파일에서 읽은 데이터를 저장하기 위해서 만든 변수
-                    StringBuffer data = new StringBuffer();
-                    FileInputStream fis = openFileInput("favoriteList.txt");//파일명
-                    BufferedReader buffer = new BufferedReader
-                            (new InputStreamReader(fis));
-
-                    List<String> dataList = new ArrayList<String>();
-
-                    String str = buffer.readLine(); // 파일에서 한줄을 읽어옴
-                    while (str != null) {
-                        dataList.add(str); //전체 리스트
-                        data.append(str + "\n");
-
-                        str = buffer.readLine();
-                    }
-
-                    //개별 필요한 정보 파싱.
-                    String[][] houseData = new String[dataList.size()][];
-                    for(int i=0; i<dataList.size(); i++){
-                        houseData[i] = dataList.get(i).split(" ");
-                    }
-
-                    int cnt = 0;
-                    StringBuffer strBuff = new StringBuffer();
-                    while(true) {
-                        for(int i=0; i<houseData[cnt].length-2; i++) {
-                            Log.i("houseData", houseData[cnt][i]);
-                            strBuff.append(houseData[cnt][i] + " ");
-//                            tv.setText(houseData[cnt][i]);
-                        }
-                        makeButton(strBuff, dynamicLayout);
-                        strBuff.setLength(0);
-//                        strBuff.append("\n");
-                        if(cnt==dataList.size()-1)
-                            break;
-                        cnt++;
-                    }
-//                    tv.setText(strBuff);
-                    buffer.close();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                // TODO : item click
+                Log.d("event", "Click on listview아이템");
             }
-        });*/
+        }) ;
+
     }   // end of onCreate
 
-    //동적 버튼 생성
-    private void makeButton(StringBuffer favoriteData, LinearLayout dynamicLayout) {
-        Button dynamicButton = new Button(this);
-        dynamicButton.setText(favoriteData);
+    public boolean loadItemsFromDB(List<JSONObject> house_arr, ArrayList<ListViewBtnItem> list) {
+//    public boolean loadItemsFromDB(ArrayList<ListViewBtnItem> list) {
+        ListViewBtnItem item;
+//        int i;
+        if (list == null) {
+            list = new ArrayList<>();
+        }
+        //순서를 위한 i값을 1초기화
+//        i = 1;
 
-        dynamicLayout.addView(dynamicButton, new LinearLayout.LayoutParams(LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        //item생성
+        for(int i=0; i<house_arr.size(); i++){
+            item = new ListViewBtnItem() ;
+            try {
+                JSONObject houseObj = house_arr.get(i);
+                item.setTextStr(houseObj.get("house_div").toString()+" "+
+                        houseObj.get("house_item").toString()+" "+
+                        houseObj.get("house_div").toString()+" "+
+                        houseObj.get("house_addr").toString()+" "+
+                        houseObj.get("floor").toString()+" "+
+                        houseObj.get("price"));
+                list.add(item) ;
+            } catch (JSONException e){
+                e.printStackTrace();
+            }
+//            item.setTextStr(Integer.toString(i) + "번 아이템입니다."); ;
+//            list.add(item) ;
+        }
+        /*
+        item = new ListViewBtnItem() ;
+        item.setTextStr();
+        item.setTextStr(Integer.toString(i) + "번 아이템입니다."); ;
+        list.add(item) ;
+        i++ ;
+
+        item = new ListViewBtnItem() ;
+        item.setTextStr(Integer.toString(i) + "번 아이템입니다."); ;
+        list.add(item) ;
+        i++ ;
+
+        item = new ListViewBtnItem() ;
+        item.setTextStr(Integer.toString(i) + "번 아이템입니다."); ;
+        list.add(item) ;
+        i++ ;
+
+        item = new ListViewBtnItem() ;
+        item.setTextStr(Integer.toString(i) + "번 아이템입니다."); ;
+        list.add(item) ;*/
+
+        return true;
     }
+
+
 }   // end of class

@@ -33,7 +33,6 @@ public class LoginActivity extends AppCompatActivity {
         id = (EditText) findViewById(R.id.login_id_edittext);
         password = (EditText) findViewById(R.id.login_pw_edittext);
 
-
         // 로그인 버튼 클릭 시
         loginButton = (Button) findViewById(R.id.login_button);
 
