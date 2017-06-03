@@ -3,8 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AV_RealEstate.iml" filepath="$PROJECT_DIR$/AV_RealEstate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoPrototype_v4/DemoPrototype_v4.iml" filepath="$PROJECT_DIR$/DemoPrototype_v4/DemoPrototype_v4.iml" />
       <module fileurl="file://$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" filepath="$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/middle_demo_v7/middle_demo_v7.iml" filepath="$PROJECT_DIR$/middle_demo_v7/middle_demo_v7.iml" />
     </modules>
   </component>
 </project>
