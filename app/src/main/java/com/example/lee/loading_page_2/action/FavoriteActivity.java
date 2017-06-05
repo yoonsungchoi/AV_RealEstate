@@ -1,10 +1,12 @@
 package com.example.lee.loading_page_2.action;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -30,7 +32,6 @@ public class FavoriteActivity extends Activity implements ListViewBtnAdapter.Lis
     org.json.JSONObject jsonObj;
     List<JSONObject> house_jsonList = new ArrayList<>();
 
-
     @Override
     public void onListBtnClick(int position) {
         Log.d("event", "favoriteActivity/ onListBtnClock 이벤트 발생");
@@ -39,7 +40,9 @@ public class FavoriteActivity extends Activity implements ListViewBtnAdapter.Lis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_listview);
+        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.custom_actionbar);
 
         house_jsonList = new ArrayList<>();
 
@@ -157,7 +160,7 @@ public class FavoriteActivity extends Activity implements ListViewBtnAdapter.Lis
                 Log.d("loadItem ##house_id",houseObj.get("house_id").toString());
                 item.setHouse_id(houseObj.get("house_id").toString());
                 item.setUser_id(user_id);
-                item.setTextStr("구  분 : " + houseObj.get("house_div").toString()+"\n "+
+                item.setTextStr(" 구  분 : " + houseObj.get("house_div").toString()+"\n "+
                         "종  류 : " + houseObj.get("house_item").toString()+"\n "+
                         "매물명 : " + houseObj.get("house_name").toString()+"\n "+
                         "소재지 : " + houseObj.get("house_addr").toString()+"\n "+

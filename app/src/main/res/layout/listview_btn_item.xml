@@ -19,6 +19,7 @@
         android:layout_width="45dp"
         android:layout_height="wrap_content"
         android:text="삭제"
+        android:textColor="#ffffff"
         android:background="#83d795" />
 
 </LinearLayout>
