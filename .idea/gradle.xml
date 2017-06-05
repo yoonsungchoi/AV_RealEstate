@@ -8,9 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DemoPrototype_v4" />
+            <option value="$PROJECT_DIR$/UnityModule_v7" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/middle_demo_v7" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

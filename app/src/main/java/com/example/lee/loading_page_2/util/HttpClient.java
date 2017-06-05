@@ -9,8 +9,8 @@ import com.loopj.android.http.RequestParams;
  */
 public class HttpClient {
 
-//    private static final String BASE_URL = "http://52.43.75.43:8080/RealEstateServer/Test?cmd=";  //집 : 192.168.0.84 // 52.78.184.207
-    private static final String BASE_URL = "http://192.168.0.53:8080/RealEstateServer/Test?cmd=";  //집 : 192.168.0.84 // 52.78.184.207
+    private static final String BASE_URL = "http://52.43.75.43:8080/RealEstateServer/Test?cmd=";  //집 : 192.168.0.84 // 52.78.184.207
+//    private static final String BASE_URL = "http://192.168.28.84:8080/RealEstateServer/Test?cmd=";  //집 : 192.168.0.84 // 52.78.184.207
 
     private static AsyncHttpClient client = new AsyncHttpClient();
 

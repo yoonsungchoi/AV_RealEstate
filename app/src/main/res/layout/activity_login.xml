@@ -86,8 +86,8 @@
         android:layout_height="50dp"
         android:text="Login"
 
-        android:textColor="#FF4DA74A"
-        android:background="#83d795"
+        android:textColor="#003300"
+        android:background="#CCFFCC"
         />
     </LinearLayout>
     <LinearLayout
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:text="   SIGN UP"
             android:gravity="center"
-            android:textColor="#FF4DA74A"
+            android:textColor="#003300"
             android:textSize="16dip"
             android:backgroundTint="#FF4DA74A" />
 

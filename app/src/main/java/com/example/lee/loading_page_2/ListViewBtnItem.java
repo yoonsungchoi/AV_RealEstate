@@ -7,15 +7,24 @@ import android.graphics.drawable.Drawable;
  */
 
 public class ListViewBtnItem {
-    private Drawable iconDrawable;
+    private String house_id;
+    private String user_id;
     private String textStr;
 
-    public Drawable getIconDrawable() {
-        return iconDrawable;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setIconDrawable(Drawable iconDrawable) {
-        this.iconDrawable = iconDrawable;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
+    }
+
+    public void setHouse_id(String house_id) {
+        this.house_id = house_id;
+    }
+
+    public String getHouse_id() {
+        return house_id;
     }
 
     public String getTextStr() {

@@ -11,6 +11,6 @@
     </style>
 
     <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar">
-        <item name="android:windowBackground">@drawable/loading_page</item>
+        <item name="android:windowBackground">@drawable/modified_loading_page</item>
     </style>
 </resources>
