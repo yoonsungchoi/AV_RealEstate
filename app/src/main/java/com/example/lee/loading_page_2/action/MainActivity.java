@@ -1,12 +1,11 @@
 package com.example.lee.loading_page_2.action;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import com.PM.Demo.UnityPlayerActivity;
 import com.example.lee.loading_page_2.R;
@@ -14,10 +13,8 @@ import com.example.lee.loading_page_2.util.HttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -26,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     Button fa_button;
     Button ar_button;
     Button favorite_button;
+//    public String user_id;
     org.json.JSONObject jsonObj;
 
     List<JSONObject> house_jsonArr;
@@ -37,15 +35,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Intent intent = getIntent();
         final String user_id = intent.getStringExtra("user_id");
-
         //AR모드
         ar_button = (Button)findViewById(R.id.imageButton1);
         ar_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent btn = new Intent(MainActivity.this, UnityPlayerActivity.class);
-                startActivity(btn);
-                //startActivity(new Intent(MainActivity.this,SubActivity.class));
+//                Intent btn = new Intent(MainActivity.this, UnityPlayerActivity.class);
+//                btn.putExtra("user_id",user_id);
+//                startActivity(btn);
+
+                Intent [] btn = new Intent[2];
+                btn[0] = new Intent(MainActivity.this, UnityPlayerActivity.class); //넘기는 Intent
+
+                btn[1] = getIntent(); //받아오는 Intent
+                String main_user_id = btn[1].getExtras().getString("user_id"); //login 에서 값 가져옴
+
+                btn[0].putExtra("main_pass_user_id",main_user_id);
+                Log.i("Main_page******","user_id : " + main_user_id);
+                startActivity(btn[0]);
             }
         });
 
@@ -55,8 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn = new Intent(MainActivity.this, FavoriteActivity.class);
-//                initHttp(user_id);
-                btn.putExtra("user_id", user_id);
+                btn.putExtra("user_id",user_id);
                 startActivity(btn);
             }
         });
