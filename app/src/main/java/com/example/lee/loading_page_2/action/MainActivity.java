@@ -62,11 +62,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 btn = new Intent(MainActivity.this, FavoriteActivity.class);
+//                btn = new Intent(MainActivity.this, TestActivity.class);  // Favorite -> VR test
                 btn.putExtra("user_id",user_id);
                 startActivity(btn);
             }
         });
     }
+
+    /* Testing Async Task */
     private void initHttp(String user_id){
         Log.i("start init", "http 통신 시작");
 

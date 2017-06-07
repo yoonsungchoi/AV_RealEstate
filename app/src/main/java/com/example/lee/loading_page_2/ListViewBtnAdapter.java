@@ -1,6 +1,9 @@
 package com.example.lee.loading_page_2;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.TextView;
 
 
 import com.example.lee.loading_page_2.util.HttpClient;
+import com.example.lee.loading_page_2.util.HttpUtil;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
@@ -89,6 +93,7 @@ public class ListViewBtnAdapter extends ArrayAdapter implements View.OnClickList
 
             @Override
             public void onClick(View v) {
+
                 String data = ((ListViewBtnItem) getItem(position)).getTextStr();
                 String house_id = ((ListViewBtnItem) getItem(position)).getHouse_id();
                 String user_id = ((ListViewBtnItem) getItem(position)).getUser_id();

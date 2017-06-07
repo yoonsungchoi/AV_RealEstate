@@ -1,5 +1,7 @@
 package com.example.lee.loading_page_2.util;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -22,7 +24,10 @@ public class HttpUtil extends AsyncTask<String, Void, JSONObject> {
         JSONObject responseJSON = null;
         try {
             //HttpURLConnection을 이용해 url에 연결하기 위한 설정
-            String url = "http://52.43.75.43:8080/RealEstateServer/Test?cmd=test&house_id=1";
+//            String url = "http://52.43.75.43:8080/RealEstateServer/Test?cmd=test&house_id=1";
+            String url = "http://52.43.75.43:8080/VRDIR/cosmos.apk";
+//            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+//            startActivity(intent);
             URL obj = new URL(url);
             HttpURLConnection conn = (HttpURLConnection) obj.openConnection();
 

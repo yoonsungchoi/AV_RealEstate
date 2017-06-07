@@ -3,6 +3,7 @@ package com.example.lee.loading_page_2.action;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -68,7 +69,7 @@ public class FavoriteActivity extends Activity implements ListViewBtnAdapter.Lis
                         params.put("house_id", jsonArr.getString(i));
                         Log.d("처리할 house_id : ", jsonObj.get("house_id").toString());
                         HttpClient.post("getInfoID", params, new JsonHttpResponseHandler(){
-                                @Override
+                            @Override
                             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                                 super.onSuccess(statusCode, headers, response);
                                 try {
@@ -104,9 +105,26 @@ public class FavoriteActivity extends Activity implements ListViewBtnAdapter.Lis
                                         @Override
                                         public void onItemClick(AdapterView parent, View v, int position, long id) {
                                             // TODO : item click
-                                            adapter.notifyDataSetChanged();
+//                                            adapter.notifyDataSetChanged();
                                             Toast.makeText(FavoriteActivity.this ,"클릭됨" ,Toast.LENGTH_LONG).show();
-                                            Log.d("event", "favoriteActivity/ onItemClick 이벤트 발생");
+                                            String house_id = ((ListViewBtnItem) adapter.getItem(position)).getHouse_id();
+                                            RequestParams params = new RequestParams();
+                                            params.put("house_id", house_id);
+                                            HttpClient.post("getVRfromFV", params, new JsonHttpResponseHandler() {
+                                                @Override
+                                                public void onSuccess(int statusCode, Header[] headers, org.json.JSONObject response) {
+                                                    try {
+                                                        jsonObj = response;
+                                                        Log.d("## VR Path = ", jsonObj.get("path").toString());
+                                                        String path = jsonObj.get("path").toString();
+                                                        String url = "http://52.43.75.43:8080/VRDIR/"+path;
+                                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                                                        startActivity(intent);
+                                                    } catch (Exception e) {
+                                                        e.printStackTrace();
+                                                    }
+                                                }
+                                            });
                                         }
                                     });
                                     Log.d("2번째 onSuccess", "END");

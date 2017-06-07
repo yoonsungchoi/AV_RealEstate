@@ -3,10 +3,14 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AV_RealEstate.iml" filepath="$PROJECT_DIR$/AV_RealEstate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AV_RealEstate.iml" filepath="$PROJECT_DIR$/AV_RealEstate.iml" />
       <module fileurl="file://$PROJECT_DIR$/UnityFinal_v7/UnityFinal_v7.iml" filepath="$PROJECT_DIR$/UnityFinal_v7/UnityFinal_v7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UnityFinal_v7/UnityFinal_v7.iml" filepath="$PROJECT_DIR$/UnityFinal_v7/UnityFinal_v7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UnityFinal_v8/UnityFinal_v8.iml" filepath="$PROJECT_DIR$/UnityFinal_v8/UnityFinal_v8.iml" />
       <module fileurl="file://$PROJECT_DIR$/UnityFinal_v8/UnityFinal_v8.iml" filepath="$PROJECT_DIR$/UnityFinal_v8/UnityFinal_v8.iml" />
       <module fileurl="file://$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" filepath="$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" />
       <module fileurl="file://$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" filepath="$PROJECT_DIR$/UnityModule_v7/UnityModule_v7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
