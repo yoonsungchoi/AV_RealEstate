@@ -1,1 +1,1 @@
-include ':app', ':UnityFinal_v7', ':UnityFinal_v8'
+include ':app', ':UnityFinal_v12'

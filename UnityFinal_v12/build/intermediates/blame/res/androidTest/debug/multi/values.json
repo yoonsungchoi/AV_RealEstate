@@ -1,0 +1,92 @@
+[
+    {
+        "outputFile": "/Users/Lee/Desktop/AV_RealEstate_Final/UnityFinal_v12/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 51,
+                    "endOffset": 102
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate_Final/UnityFinal_v12/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 51,
+                        "endOffset": 102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 107,
+                    "endLine": 4,
+                    "endColumn": 8,
+                    "endOffset": 200
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate_Final/UnityFinal_v12/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 107,
+                        "endLine": 4,
+                        "endColumn": 8,
+                        "endOffset": 200
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Lee/Desktop/AV_RealEstate/UnityFinal_v12/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 51,
+                    "endOffset": 102
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate/UnityFinal_v12/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 51,
+                        "endOffset": 102
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 107,
+                    "endLine": 4,
+                    "endColumn": 8,
+                    "endOffset": 200
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate/UnityFinal_v12/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 107,
+                        "endLine": 4,
+                        "endColumn": 8,
+                        "endOffset": 200
+                    }
+                }
+            }
+        ]
+    }
+]

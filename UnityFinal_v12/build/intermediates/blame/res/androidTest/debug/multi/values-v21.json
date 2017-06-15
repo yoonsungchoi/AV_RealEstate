@@ -1,0 +1,54 @@
+[
+    {
+        "outputFile": "/Users/Lee/Desktop/AV_RealEstate_Final/UnityFinal_v12/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v21/values-v21.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 3,
+                    "endColumn": 8,
+                    "endOffset": 158
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate_Final/UnityFinal_v12/build/intermediates/bundles/debug/res/values-v21/values-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 3,
+                        "endColumn": 8,
+                        "endOffset": 158
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/Lee/Desktop/AV_RealEstate/UnityFinal_v12/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-v21/values-v21.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endLine": 3,
+                    "endColumn": 8,
+                    "endOffset": 158
+                },
+                "from": {
+                    "file": "/Users/Lee/Desktop/AV_RealEstate/UnityFinal_v12/build/intermediates/bundles/debug/res/values-v21/values-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 3,
+                        "endColumn": 8,
+                        "endOffset": 158
+                    }
+                }
+            }
+        ]
+    }
+]

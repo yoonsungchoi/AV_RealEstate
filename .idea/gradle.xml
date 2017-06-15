@@ -8,8 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/UnityFinal_v7" />
-            <option value="$PROJECT_DIR$/UnityFinal_v8" />
+            <option value="$PROJECT_DIR$/UnityFinal_v12" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>
